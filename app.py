@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1Z-SpJjKC58CaNlL8l5wTKyIURLgaQo1y
 """
 
-!pip install transformers
-
 import torch
 from transformers import BertForQuestionAnswering
 from transformers import BertTokenizer
@@ -47,7 +45,6 @@ def findAnswer(question, paragraph):
 findAnswer(question, paragraph)
 
 # Interface
-!pip install -q gradio
 import gradio as gr
 def qa_func(question, paragraph):
     return findAnswer(question, paragraph)
