@@ -54,6 +54,7 @@ gr.Interface(qa_func,
         gr.inputs.Textbox(label="Question"), 
     ], 
 gr.outputs.Textbox(label="Answer"),
+server_port = '0.0.0.0',
 title="Question Answer",
 description="BERT-SQuAD is a question answering model that takes 2 inputs: a paragraph that provides context and a question that should be answered. Takes around 6s to run.").launch()
 
