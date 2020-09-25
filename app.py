@@ -42,19 +42,20 @@ def findAnswer(question, paragraph):
   answer = ' '.join(tokens[start_index:end_index+1])
   return correctedAnswer(answer)
 
-findAnswer(question, paragraph)
-
 # Interface
 import gradio as gr
 def qa_func(question, paragraph):
     return findAnswer(question, paragraph)
-gr.Interface(qa_func, 
+interface = gr.Interface(qa_func, 
     [
         gr.inputs.Textbox(lines=7, label="Context"), 
         gr.inputs.Textbox(label="Question"), 
     ], 
 gr.outputs.Textbox(label="Answer"),
-server_port = '0.0.0.0',
 title="Question Answer",
-description="BERT-SQuAD is a question answering model that takes 2 inputs: a paragraph that provides context and a question that should be answered. Takes around 6s to run.").launch()
+description="BERT-SQuAD is a question answering model that takes 2 inputs: a paragraph that provides context and a question that should be answered. Takes around 6s to run.",
+live=True,
+capture_session=True)
+
+interface.launch()
 

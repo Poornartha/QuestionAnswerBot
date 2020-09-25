@@ -1,1 +1,1 @@
-web: gunicorn app:app --log-file=-  && python app.py
+web: source setup.sh && python app.py
