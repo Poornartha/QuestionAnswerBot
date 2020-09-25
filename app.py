@@ -46,6 +46,7 @@ def findAnswer(question, paragraph):
 import gradio as gr
 def qa_func(question, paragraph):
     return findAnswer(question, paragraph)
+    
 interface = gr.Interface(qa_func, 
     [
         gr.inputs.Textbox(lines=7, label="Context"), 
